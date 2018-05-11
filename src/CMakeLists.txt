@@ -20,7 +20,7 @@ ExternalProject_Add(libint_library
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/libint
     DOWNLOAD_DIR ${CMAKE_BINARY_DIR}/libint-src
     # download generalized to generating source by running libint_compiler
-    DOWNLOAD_COMMAND ${STAGED_INSTALL_PREFIX}/bin/libint_compiler
+    DOWNLOAD_COMMAND "C:/Program Files (x86)/Libint/bin/libint_compiler.exe"
     LOG_DOWNLOAD 1
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
                -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}

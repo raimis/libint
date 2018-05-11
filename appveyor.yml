@@ -1,0 +1,17 @@
+image: Visual Studio 2017
+clone_depth: 5
+
+install:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - C:\Miniconda36-x64\Scripts\activate base
+  - conda install --yes cmake
+  - conda list
+
+before_build:
+  - cd ..
+  - mkdir build
+  - cd build
+  - cmake -A x64 ..\libint
+
+build_script:
+  - cmake --build .

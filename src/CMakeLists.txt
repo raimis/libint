@@ -12,7 +12,7 @@ ExternalProject_Add(libint_compiler
                -DMAX_AM_ERI=${MAX_AM_ERI}
     CMAKE_CACHE_ARGS -DCMAKE_MODULE_PATH:STRING=${CMAKE_MODULE_PATH}
                      -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
-    INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
+    #INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
     )
 
 ExternalProject_Add(libint_library
@@ -35,7 +35,7 @@ ExternalProject_Add(libint_library
     CMAKE_CACHE_ARGS -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
                      -DCMAKE_CXX_FLAGS:STRING=${CMAKE_CXX_FLAGS}
     BINARY_DIR ${CMAKE_BINARY_DIR}/libint-src
-    INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
+    #INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
     )
 
 ExternalProject_Add(libderiv_compiler
@@ -47,7 +47,7 @@ ExternalProject_Add(libderiv_compiler
                -DMAX_AM_ERI=${MAX_AM_ERI}
                -DLibintint_DIR=${STAGED_INSTALL_PREFIX}/share/cmake/Libint
     CMAKE_CACHE_ARGS -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
-    INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
+    #INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
     )
 
 ExternalProject_Add(libderiv_library
@@ -71,7 +71,7 @@ ExternalProject_Add(libderiv_library
     DOWNLOAD_COMMAND ${STAGED_INSTALL_PREFIX}/bin/libderiv_compiler
     LOG_DOWNLOAD 1
     BINARY_DIR ${CMAKE_BINARY_DIR}/libderiv-src
-    INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
+    #INSTALL_COMMAND DESTDIR=${CMAKE_BINARY_DIR}/stage ${CMAKE_MAKE_PROGRAM} install
     )
 
 # Note that libint_library and libderiv_library could build in parallel

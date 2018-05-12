@@ -58,11 +58,11 @@ int main()
   /*-------------------------------
     Initialize files and libraries
    -------------------------------*/
-  outfile = fopen("./output.dat", "w");
-  d1hrr_header = fopen("./d1hrr_header.h","w");
-  deriv_header = fopen("./deriv_header.h","w");
-  libderiv_header = fopen("./libderiv.h","w");
-  init_code = fopen("./init_libderiv.cc","w");
+  outfile = fopen("output.dat", "w");
+  d1hrr_header = fopen("d1hrr_header.h","w");
+  deriv_header = fopen("deriv_header.h","w");
+  libderiv_header = fopen("libderiv.h","w");
+  init_code = fopen("init_libderiv.cc","w");
   copyright(d1hrr_header);
   copyright(deriv_header);
   copyright(libderiv_header);

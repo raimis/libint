@@ -17,3 +17,9 @@ before_build:
 
 build_script:
   - cmake --build .
+
+#after_build:
+#  - cd "C:\Program Files (x86)\Libint\bin"
+#  - dir
+#  - libint_compiler.exe
+#  - dir

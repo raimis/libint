@@ -20,6 +20,9 @@ if(${BUILD_SHARED_LIBS})
     target_link_libraries(int PRIVATE ${LIBC_INTERJECT})
 endif()
 
+# Suppress "unreferenced local variable" warnings
+set_target_properties(int PROPERTIES COMPILE_FLAGS "/wd4101")
+
 # <<<  Install  >>>
 
 install(FILES ${CMAKE_BINARY_DIR}/libint.h

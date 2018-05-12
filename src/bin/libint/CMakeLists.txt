@@ -28,6 +28,11 @@ else()
   set_target_properties(libint_compiler PROPERTIES COMPILE_FLAGS "-std=c99")
 endif()
 
+# Suppress "unreferenced local variable" warnings
+set_target_properties(libint_compiler PROPERTIES COMPILE_FLAGS "/wd4101")
+
+set_target_properties(libint_compiler PROPERTIES LINK_FLAGS "/STACK:10000000")
+
 math(EXPR LIBINT_MAX_AM ${MAX_AM_ERI}+1)
 math(EXPR LIBINT_OPT_AM "${MAX_AM_ERI}/2 + ${MAX_AM_ERI}%2")
 target_compile_definitions(libint_compiler

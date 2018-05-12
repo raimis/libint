@@ -20,6 +20,9 @@ add_executable(libderiv_compiler ${COMPILER_SRC})
 target_include_directories(libderiv_compiler PRIVATE ../
                                                      ${PROJECT_BINARY_DIR})
 
+# Suppress "unreferenced local variable" warnings
+set_target_properties(libderiv_compiler PROPERTIES COMPILE_FLAGS "/wd4101")
+
 math(EXPR LIBDERIV_OPT_AM1 ${MAX_AM_ERI}-1)  # A.M. level for 1st derivative ERIs
 math(EXPR LIBINT_MAX_AM ${MAX_AM_ERI}+1)
 math(EXPR LIBINT_OPT_AM "${MAX_AM_ERI}/2 + ${MAX_AM_ERI}%2")

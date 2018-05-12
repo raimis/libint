@@ -11,9 +11,7 @@ before_build:
   - cd ..
   - mkdir build
   - cd build
-  - cmake -A x64
-          -DMAX_AM_ERI=3
-          ..\libint
+  - cmake -A x64 ..\libint
 
 build_script:
   - cmake --build .

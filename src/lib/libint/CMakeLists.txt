@@ -20,8 +20,10 @@ if(${BUILD_SHARED_LIBS})
     target_link_libraries(int PRIVATE ${LIBC_INTERJECT})
 endif()
 
-# Suppress "unreferenced local variable" warnings
-set_target_properties(int PROPERTIES COMPILE_FLAGS "/wd4101")
+if(MSVC)
+    # Suppress MSVC warnings
+    set_target_properties(int PROPERTIES COMPILE_FLAGS "/wd4101 /wd4996")
+endif(MSVC)
 
 # <<<  Install  >>>
 

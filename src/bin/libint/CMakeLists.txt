@@ -28,8 +28,10 @@ else()
   set_target_properties(libint_compiler PROPERTIES COMPILE_FLAGS "-std=c99")
 endif()
 
-# Suppress "unreferenced local variable" warnings
-set_target_properties(libint_compiler PROPERTIES COMPILE_FLAGS "/wd4101")
+if(MSVC)
+    # Suppress MSVC warnings
+    set_target_properties(libint_compiler PROPERTIES COMPILE_FLAGS "/wd4101 /wd4996")
+endif(MSVC)
 
 set_target_properties(libint_compiler PROPERTIES LINK_FLAGS "/STACK:10000000")
 

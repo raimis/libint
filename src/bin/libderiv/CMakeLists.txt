@@ -20,11 +20,6 @@ add_executable(libderiv_compiler ${COMPILER_SRC})
 target_include_directories(libderiv_compiler PRIVATE ../
                                                      ${PROJECT_BINARY_DIR})
 
-if(MSVC)
-    # Suppress MSVC warnings
-    set_target_properties(libderiv_compiler PROPERTIES COMPILE_FLAGS "/wd4101 /wd4996")
-endif(MSVC)
-
 math(EXPR LIBDERIV_OPT_AM1 ${MAX_AM_ERI}-1)  # A.M. level for 1st derivative ERIs
 math(EXPR LIBINT_MAX_AM ${MAX_AM_ERI}+1)
 math(EXPR LIBINT_OPT_AM "${MAX_AM_ERI}/2 + ${MAX_AM_ERI}%2")

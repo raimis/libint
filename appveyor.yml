@@ -5,10 +5,10 @@ install:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
 
 before_build:
-  - cd ..
-  - mkdir build
-  - cd build
-  - cmake -A x64 ..\libint
+  - mkdir build && cd build
+  - cmake -A x64
+          -DCMAKE_C_FLAGS="/wd4101 /wd4996"
+          ..
 
 build_script:
   - cmake --build .

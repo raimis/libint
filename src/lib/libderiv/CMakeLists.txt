@@ -23,11 +23,6 @@ if(${BUILD_SHARED_LIBS})
     target_link_libraries(deriv PRIVATE ${LIBC_INTERJECT})
 endif()
 
-if(MSVC)
-    # Suppress MSVC warnings
-    set_target_properties(deriv PROPERTIES COMPILE_FLAGS "/wd4101 /wd4996")
-endif(MSVC)
-
 # <<<  Install  >>>
 
 if(${MERGE_LIBDERIV_INCLUDEDIR})
